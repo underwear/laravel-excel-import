@@ -1,0 +1,18 @@
+{
+  "name": "underwear/laravel-excel-import",
+  "description": "Simple import from excel for Laravel",
+  "require": {
+    "phpoffice/phpspreadsheet": "^1.11"
+  },
+  "authors": [
+    {
+      "name": "Igor Filippov",
+      "email": "thisfil@ya.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Underwear\\Import\\": "src/"
+    }
+  }
+}
