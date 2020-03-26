@@ -4,9 +4,7 @@ Easily import xlsx file right into you database.
 
 Data validation and searching related values from other tables.
 
-## Examples
-
-### First example
+## Getting Started
 
 Import categories from xlsx file (xlsx file has only one column 'A' and database has name field 'title')
 
@@ -21,7 +19,16 @@ Import::make($dbTable, [
     Text::make('title', 'A')
 ])->parseFile($xlsxFilepath);
 ```
-### Second example
+
+## Supported Columns Types
+### Text
+### Slug
+### Boolean
+### Autoincrement
+### BelongsTo
+
+## More examples
+
 Imagine we need to import some articles from xlsx file.
 
 Xlsx file has some fields like:
