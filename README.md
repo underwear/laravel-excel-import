@@ -22,10 +22,52 @@ Import::make($dbTable, [
 
 ## Supported Columns Types
 ### Text
+```php
+use Underwear\Import\Elements\Text;
+
+Text::make('targetTableColumnName', 'A');
+```
+
+You can add validation rules:
+```php
+use Underwear\Import\Elements\Text;
+
+Text::make('target_table_colum_name', 'A')
+        ->rules(['filled', 'email']);
+```
 ### Slug
+You can generate slug from text
+
+```php
+use Underwear\Import\Elements\Slug;
+
+Slug::make('slug', 'B');
+```
 ### Boolean
+```php
+use Underwear\Import\Elements\Boolean;
+
+Boolean::make('is_published', 'D')
+      ->trueValue('yeap');
+```
 ### Autoincrement
+Do not uses xls cells to get value. Just generates by it owns.
+```php
+use Underwear\Import\Elements\Autoincrement;
+
+Autoincrement::make('order_column');
+```
 ### BelongsTo
+```php
+
+use Underwear\Import\Elements\BelongsTo;
+
+BelongsTo::make('category_id', 'C', 'categories' , 'title', 'id');
+
+// 3th arg: related table in database;
+// 4th arg: column for searching in related table;
+// 5th arg: column for value returning in related table;
+```
 
 ## More examples
 
