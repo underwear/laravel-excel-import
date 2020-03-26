@@ -21,7 +21,7 @@ Import::make($dbTable, [
     Text::make('title', 'A')
 ])->parseFile($xlsxFilepath);
 ```
-### Second example.
+### Second example
 Imagine we need to import some articles from xlsx file.
 
 Xlsx file has some fields like:
