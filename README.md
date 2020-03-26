@@ -66,7 +66,7 @@ BelongsTo::make('category_id', 'C', 'categories' , 'title', 'id');
 
 // 3th arg: related table in database;
 // 4th arg: column for searching in related table;
-// 5th arg: column for value returning in related table;
+// 5th arg: column for value returning from related table;
 ```
 
 ## More examples
