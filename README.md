@@ -35,6 +35,16 @@ use Underwear\Import\Elements\Text;
 Text::make('target_table_colum_name', 'A')
         ->rules(['filled', 'email']);
 ```
+
+Or even add your own closure to mutate value
+```php
+use Underwear\Import\Elements\Text;
+
+Text::make('target_table_colum_name', 'A')
+        ->prepare(function($value) {
+                return ucfirst($value);
+        });
+```
 ### Slug
 You can generate slug from text
 
