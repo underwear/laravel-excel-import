@@ -2,7 +2,7 @@
   "name": "underwear/laravel-excel-import",
   "description": "Simple import from excel for Laravel",
   "require": {
-    "phpoffice/phpspreadsheet": "^1.11"
+    "phpoffice/phpspreadsheet": "^1.10"
   },
   "authors": [
     {
