@@ -1,12 +1,7 @@
 # laravel-excel-import
 
-Easily import xlsx file right into you database.
-
-Data validation and searching related values from other tables.
-
-## Getting Started
-
-Import categories from xlsx file (xlsx file has column 'A' and database has name field 'title')
+Easily import xlsx file right into you database just with some code lines!
+Validate your data with default laravel validator and search related values from other tables.
 
 ```php
 use Underwear\Import\Import;
@@ -16,7 +11,14 @@ $dbTable = 'categories';
 $xlsxFilepath = '/some/path/to/file.xlsx';
 
 Import::make($dbTable, [
-    Text::make('title', 'A')
+
+    Text::make('title', 'A'),
+
+    Text::make('code', 'B')
+        ->prepare(function ($value) {
+            return ucfirst($value);
+        }),
+
 ])->parseFile($xlsxFilepath);
 ```
 
@@ -77,6 +79,35 @@ BelongsTo::make('category_id', 'C', 'categories' , 'title', 'id');
 // 3th arg: related table in database;
 // 4th arg: column for searching in related table;
 // 5th arg: column for value returning from related table;
+```
+
+### Closure
+Do not uses xls cells to get value. Just returns value
+```php
+
+use Underwear\Import\Elements\Closure;
+
+Closure::make('some_table_field', function() {
+        // code here whatever you want
+        return "something";
+});
+```
+
+### Faker
+Use can also use `fzaninotto/Faker`
+```php
+
+use Underwear\Import\Elements\Faker;
+use Faker\Generator;
+
+Faker::make('some_table_field', function(Generator $faker) {
+        return $faker->word;
+});
+
+## Installation
+You can install the package via composer:
+```
+composer require underwear/laravel-excel-import
 ```
 
 ## More examples
