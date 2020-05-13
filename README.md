@@ -104,8 +104,12 @@ Faker::make('some_table_field', function(Generator $faker) {
         return $faker->word;
 });
 
+```
+
+
 ## Installation
 You can install the package via composer:
+
 ```
 composer require underwear/laravel-excel-import
 ```
