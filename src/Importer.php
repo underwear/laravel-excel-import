@@ -42,9 +42,10 @@ class Importer
         $worksheet = $this->load($filepath);
 
         $startFromRow = $this->import->startFromRow();
+        $endRow = $worksheet->getHighestRow();
 
         $items = [];
-        foreach ($worksheet->getRowIterator($startFromRow) as $row) {
+        foreach ($worksheet->getRowIterator($startFromRow, $endRow) as $row) {
             $items[] = $this->parseRow($row);
         }
 

@@ -69,10 +69,11 @@ class BelongsTo extends Text
     {
         $value = parent::getValue($cell);
 
-        $result = DB::table($this->ownerTable)
+        $query = DB::table($this->ownerTable)
             ->select([$this->ownerTableKeyColumn, $this->ownerTableSearchColumn])
-            ->where($this->ownerTableSearchColumn, $value)
-            ->first();
+            ->where($this->ownerTableSearchColumn, $value);
+
+        $result = $query->first();
 
         if (!$result) {
             return null;
