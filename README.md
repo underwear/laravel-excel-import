@@ -114,7 +114,7 @@ You can install the package via composer:
 composer require underwear/laravel-excel-import
 ```
 
-## More examples
+## Usage example
 
 Imagine we need to import some articles from xlsx file.
 
