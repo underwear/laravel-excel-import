@@ -6,7 +6,7 @@ Data validation and searching related values from other tables.
 
 ## Getting Started
 
-Import categories from xlsx file (xlsx file has only one column 'A' and database has name field 'title')
+Import categories from xlsx file (xlsx file has column 'A' and database has name field 'title')
 
 ```php
 use Underwear\Import\Import;
