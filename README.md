@@ -15,6 +15,7 @@ Import::make($dbTable, [
     Text::make('title', 'A'),
 
     Text::make('code', 'B')
+        ->rules(['filled', 'size:12'])
         ->prepare(function ($value) {
             return ucfirst($value);
         }),
