@@ -31,7 +31,7 @@ use Underwear\Import\Elements\Text;
 Text::make('targetTableColumnName', 'A');
 ```
 
-You can add validation rules:
+You can add validation [rules](https://laravel.com/docs/7.x/validation#available-validation-rules):
 ```php
 use Underwear\Import\Elements\Text;
 
